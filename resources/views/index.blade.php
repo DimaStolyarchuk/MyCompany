@@ -5,10 +5,13 @@
 <div class="wrapper col2">
     <div id="gallery">
         <ul>
-            <li class="placeholder" style="background-image:url(images/demo/gallery_default.gif);">Image Holder</li>
-            <li><a class="swap" style="background-image:url(images/demo/290x105.gif);" href="#gallery"><strong>Services</strong><span><img src="images/demo/gallery_1.gif" alt="" /></span></a></li>
-            <li><a class="swap" style="background-image:url(images/demo/290x105.gif);" href="#gallery"><strong>Products</strong><span><img src="images/demo/gallery_2.gif" alt="" /></span></a></li>
-            <li class="last"><a class="swap" style="background-image:url(images/demo/290x105.gif);" href="#gallery"><strong>Company</strong><span><img src="images/demo/gallery_3.gif" alt="" /></span></a></li>
+            @foreach($dataHomes as $dataHome)
+                @if($loop->first)
+                <li class="placeholder" style="background-image:url({{ asset('storage/'. $dataHome->image) }});">Image Holder</li>
+                @else
+                <li><a class="swap" style="background-image:url({{ asset('storage/'. $dataHome->image) }});" href="#gallery"><strong>Services</strong><span><img src="{{ asset('storage/'. $dataHome->image) }}" alt="" /></span></a></li>
+                @endif
+            @endforeach
         </ul>
         <div class="clear"></div>
     </div>
@@ -16,50 +19,52 @@
 <div class="wrapper col4">
     <div id="container">
         <div id="content">
-            <h1>About This Free CSS Template</h1>
-            <p>This is a W3C standards compliant free website template from <a href="http://www.os-templates.com/">OS Templates</a>.</p>
-            <p>This template is distributed using a <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>, which allows you to use and modify the template for both personal and commercial use when you keep the provided credit links in the footer.</p>
-            <p>For more CSS templates visit <a href="http://www.os-templates.com/">Free Website Templates</a>.</p>
-            <p>Lacusenim inte trices lorem anterdum nam sente vivamus quis fauctor mauris. Wisinon vivamus wisis adipis laorem lobortis curabiturpiscingilla dui platea ipsum lacingilla.</p>
-            <p>Semalique tor sempus vestibulum libero nibh pretium eget eu elit montes. Sedsemporttis sit intesque felit quis elis et cursuspenatibulum tincidunt non curabitae.</p>
+            @foreach($dataInfos as $dataInfo)
+                @if($loop->first)
+            <h1>{{ $dataInfo->title }}</h1>
+                @endif
+            @endforeach
+            <p>My Company піклується про всіх наших клієнтів і прагне полегшити й поліпшити спеціальні можливості та зручність
+                використання свого веб-сайту <a href="http://www.os-templates.com/">OS Templates</a>.</p>
+            <p>Початкова робота із запровадження спеціальних можливостей була завершена
+                (тестування проводилося як за допомогою автоматичних засобів тестування
+                спеціальних можливостей, так і за допомогою користувачів засобів озвучування змісту екрану, для виявлення помилок).</p>
+            <p>Будь ласка, зверніть увагу, що наша робота над підтримкою спеціальних можливостей та зручності використання триває.
+                Хоча ми прагнемо зробити веб-сайт максимально доступним, можуть виникати певні проблеми із різними допоміжними
+                технологіями, оскільки спектр допоміжних технологій широкий і різноманітний. Вдячні за ваше розуміння.</p>
             <div class="homecontent">
                 <ul>
+                    @foreach($dataInfos as $dataInfo)
                     <li>
-                        <p class="imgholder"><img src="images/demo/286x100.gif" alt="" /></p>
-                        <h2>Indonectetus facilis leo nibh</h2>
-                        <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque.</p>
-                        <p>congue magnis vestibulum quismodo nulla et feugiat. Adipisciniapellentum leo ut consequam ris felit elit id nibh sociis malesuada.</p>
-                        <p class="readmore"><a href="#">Read More &raquo;</a></p>
+                        <p class="imgholder"><img src="{{ asset('storage/'. $dataInfo->image) }}" alt="" /></p>
+                        <h2>{{ $dataInfo->second_title }}</h2>
+                        <p>{{ $dataInfo->description }}</p>
                     </li>
-                    <li class="last">
-                        <p class="imgholder"><img src="images/demo/286x100.gif" alt="" /></p>
-                        <h2>Indonectetus facilis leo nibh</h2>
-                        <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-                        <p>Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo nulla et feugiat. Adipisciniapellentum leo ut consequam ris felit elit id nibh sociis malesuada.</p>
-                        <p class="readmore"><a href="#">Read More &raquo;</a></p>
-                    </li>
+                    @endforeach
                 </ul>
                 <div class="clear"></div>
             </div>
-            <p>Odiointesque at quat nam nec quis ut feugiat consequet orci liberos. Tempertincidunt sed maecenas eros elerit nullam vest rhoncus diam consequat amet. Diamdisse ligula tincidunt a orci proin auctor lacilis lacilis met vitae.</p>
+            <p>Якщо в будь-який час у вас виникнуть конкретні запитання або побоювання з приводу доступності будь-якої конкретної
+                веб-сторінки на веб-сайті, будь ласка, зв'яжіться з нами електронною поштою за адресою My_company@gmail.com
+                або телефоном: (097) 111 11 11.</p>
+
         </div>
+        @foreach($dataNews as $dataNew)
         <div id="column">
             <div id="featured">
                 <ul>
                     <li>
-                        <h2>Indonectetus facilis leonib</h2>
-                        <p class="imgholder"><img src="images/demo/240x90.gif" alt="" /></p>
-                        <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo nulla et feugiat. Adipisciniapellentum leo ut consequam ris felit elit id nibh sociis malesuada.</p>
-                        <p class="more"><a href="#">Read More &raquo;</a></p>
+                        @if($loop->first)
+                        <h2>{{ $dataNew->title }}</h2>
+                        @endif
+                        <p class="imgholder"><img src="{{ asset('storage/'. $dataNew->image) }}" alt="" /></p>
+                        <p>{{ $dataNew->description }}</p>
+{{--                        <p class="more"><a href="#">Read More &raquo;</a></p>--}}
                     </li>
                 </ul>
             </div>
-            <div class="holder">
-                <div class="imgholder"><img src="images/demo/290x100.gif" alt="" /></div>
-                <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-                <p class="readmore"><a href="#">Read More &raquo;</a></p>
-            </div>
         </div>
+        @endforeach
         <div class="clear"></div>
     </div>
 </div>
