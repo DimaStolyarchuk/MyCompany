@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Сторінка новин
+                        Сторінка коментарів
                     </h1>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Таблиця нових новин<a href="{{route('news_form')}}"><i class="fa fa-edit"></i> Додати нові дані </a>
+                            Таблиця головної сторінки <a href="{{route('coments_form')}}"><i class="fa fa-edit"></i> Додати нові дані </a>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -28,29 +28,30 @@
                                     <thead>
                                     <tr>
                                         <th>Номер Id</th>
-                                        <th>Титулка</th>
-                                        <th>Картинка</th>
-                                        <th>Коментарі</th>
+                                        <th>Перший коментар</th>
+                                        <th>Другий коментар</th>
+                                        <th>Третій коментар</th>
                                         <th>Активність</th>
                                         <th>Пріорітет</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr class="odd gradeX">
-                                    @foreach($dataNews as $dataNew)
+                                    @foreach($dataComents as $dataComent)
                                         <tr>
-                                            <th scope="row">{{$dataNew->id}}</th>
-                                            <td>{{$dataNew->title}}</td>
-                                            <td>{{$dataNew->image}}</td>
-                                            <td>{{$dataNew->description}}</td>
-                                            <td>{{$dataNew->action}}</td>
-                                            <td>{{$dataNew->priority}}</td>
+                                            <th scope="row">{{$dataComent->id}}</th>
+                                            <td>{{$dataComent->title}}</td>
+                                            <td>{{$dataComent->first_coments}}</td>
+                                            <td>{{$dataComent->second_coments}}</td>
+                                            <td>{{$dataComent->third_coments}}</td>
+                                            <td>{{$dataComent->action}}</td>
+                                            <td>{{$dataComent->priority}}</td>
                                             <td>
-                                                <a href="{{ route('news_edit', ['id' => $dataNew->id]) }}">
+                                                <a href="{{ route('coments_edit', ['id' => $dataComent->id]) }}">
                                                     edit
                                                 </a>
                                                 /
-                                                <a href="{{ route('delete_news', ['id' => $dataNew->id]) }}">
+                                                <a href="{{ route('delete_coments', ['id' => $dataComent->id]) }}">
                                                     delete
                                                 </a>
                                             </td>

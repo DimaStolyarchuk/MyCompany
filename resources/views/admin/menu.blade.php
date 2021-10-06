@@ -90,7 +90,13 @@
             </li>
 
             <li>
-                <a href=""><i class="fa fa-table"></i> Рецепти(recipe)</a>
+                <a href="{{ route('admin_about') }}"><i class="fa fa-table"></i> Про компанію(about)</a>
+            </li>
+            <li>
+                <a href="{{ route('admin_table') }}"><i class="fa fa-table"></i> Таблиця(table)</a>
+            </li>
+            <li>
+                <a href="{{ route('admin_coments') }}"><i class="fa fa-table"></i> Коментарі(coments)</a>
             </li>
             <li>
                 <a href=""><i class="fa fa-edit"></i> Блог(blog) </a>

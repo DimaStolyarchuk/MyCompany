@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Сторінка новин
+                        Сторінка про компанію
                     </h1>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Таблиця нових новин<a href="{{route('news_form')}}"><i class="fa fa-edit"></i> Додати нові дані </a>
+                            Таблиця головної сторінки <a href="{{route('about_form')}}"><i class="fa fa-edit"></i> Додати нові дані </a>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -28,29 +28,31 @@
                                     <thead>
                                     <tr>
                                         <th>Номер Id</th>
+                                        <th>Картинка ліва</th>
+                                        <th>Картинка права</th>
                                         <th>Титулка</th>
-                                        <th>Картинка</th>
-                                        <th>Коментарі</th>
+                                        <th>Опис</th>
                                         <th>Активність</th>
                                         <th>Пріорітет</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr class="odd gradeX">
-                                    @foreach($dataNews as $dataNew)
+                                    @foreach($dataAbouts as $dataAbout)
                                         <tr>
-                                            <th scope="row">{{$dataNew->id}}</th>
-                                            <td>{{$dataNew->title}}</td>
-                                            <td>{{$dataNew->image}}</td>
-                                            <td>{{$dataNew->description}}</td>
-                                            <td>{{$dataNew->action}}</td>
-                                            <td>{{$dataNew->priority}}</td>
+                                            <th scope="row">{{$dataAbout->id}}</th>
+                                            <td>{{$dataAbout->imageLeft}}</td>
+                                            <td>{{$dataAbout->imageRight}}</td>
+                                            <td>{{$dataAbout->title}}</td>
+                                            <td>{{$dataAbout->description}}</td>
+                                            <td>{{$dataAbout->action}}</td>
+                                            <td>{{$dataAbout->priority}}</td>
                                             <td>
-                                                <a href="{{ route('news_edit', ['id' => $dataNew->id]) }}">
+                                                <a href="{{ route('about_edit', ['id' => $dataAbout->id]) }}">
                                                     edit
                                                 </a>
                                                 /
-                                                <a href="{{ route('delete_news', ['id' => $dataNew->id]) }}">
+                                                <a href="{{ route('delete_about', ['id' => $dataAbout->id]) }}">
                                                     delete
                                                 </a>
                                             </td>
@@ -71,7 +73,6 @@
 </body>
 
 </html>
-
 
 
 

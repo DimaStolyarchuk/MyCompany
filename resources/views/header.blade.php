@@ -1,13 +1,13 @@
 <div class="wrapper col1">
     <div id="head">
-        <h1><a href='{{ asset('index.html') }}'>My Company</a></h1>
+        <h1><a href="{{ route('index') }}">My Company</a></h1>
         <p>Краща дизайн студія в Києві</p>
         <div id="topnav">
             <ul>
-                <li><a class="active" href='{{ asset('index.html') }}'>Головна сторінка</a></li>
-                <li><a href='{{ asset('about.html') }}'>Про компанію</a></li>
-                <li><a href='{{ asset('blog.html') }}'>Блог</a></li>
-                <li><a href="href='{{ asset('projects.html') }}'">Наші проєкти</a>
+                <li><a href="{{ route('index') }}">Головна сторінка</a></li>
+                <li><a href="{{ route('about') }}">Про компанію</a></li>
+                <li><a href="{{ route('blog') }}">Блог</a></li>
+                <li><a href="{{ route('blog') }}">Наші проєкти</a>
                     <ul>
                         <li><a href='{{ asset('room.html') }}'>Link 1</a></li>
                         <li><a href='{{ asset('house.html') }}'>Link 2</a></li>
@@ -20,9 +20,33 @@
         <div id="search">
             <form action="#" method="post">
                 <fieldset>
-                    <legend>Site Search</legend>
-                    <input type="submit" name="go" id="go" value="Відпр.."/>
-                    <input type="text" value="Написати повідомлення&hellip;"  onfocus="this.value=(this.value=='Написати повідомлення;')? '' : this.value ;" />
+                    @guest
+                        @if (Route::has('register'))
+                                <input type="submit" name="go" id="go" href="registration" value="Реєстрація"/>
+{{--                                <a class="nav-link" href="registration">Реєстрація</a>--}}
+                        @endif
+                            <input type="submit" name="go" id="go" href="entry" value="Вхід"/>
+{{--                            <a href="entry">Вхід</a>--}}
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" style="color: #0a0e14!important"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Вихід
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+
                 </fieldset>
             </form>
         </div>
