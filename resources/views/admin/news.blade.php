@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Сторінка новин
+                        Головна сторінка
                     </h1>
                 </div>
             </div>
@@ -31,8 +31,6 @@
                                         <th>Титулка</th>
                                         <th>Картинка</th>
                                         <th>Коментарі</th>
-                                        <th>Активність</th>
-                                        <th>Пріорітет</th>
                                     </tr>
                                     </thead>
                                     <tbody>
