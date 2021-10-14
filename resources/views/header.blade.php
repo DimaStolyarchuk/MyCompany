@@ -18,18 +18,15 @@
             </ul>
         </div>
         <div id="search">
-            <form action="#" method="post">
                 <fieldset>
                     @guest
                         @if (Route::has('register'))
-                                <input type="submit" name="go" id="go" href="registration" value="Реєстрація"/>
-{{--                                <a class="nav-link" href="registration">Реєстрація</a>--}}
+                                <a type="button" class="btn btn-primary" href="{{ route('registration') }}">Реєстрація</a>
                         @endif
-                            <input type="submit" name="go" id="go" href="entry" value="Вхід"/>
-{{--                            <a href="entry">Вхід</a>--}}
+                            <a type="button" class="btn btn-primary" href="{{ route('entry') }}">Вхід</a>
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="btn btn-primary" href="{{ route('index') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -46,9 +43,7 @@
                             </div>
                         </li>
                     @endguest
-
                 </fieldset>
-            </form>
         </div>
     </div>
 </div>
