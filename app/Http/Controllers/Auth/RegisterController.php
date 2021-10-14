@@ -24,6 +24,12 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    public function registration()
+    {
+        $dataRegistrations = User::get();
+        return view('registration',compact('dataRegistrations'));
+    }
+
     /**
      * Where to redirect users after registration.
      *
