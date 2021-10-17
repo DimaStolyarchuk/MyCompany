@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\Coments;
+use App\Comments;
 use App\Entry;
 use App\Home;
 use App\Info;
@@ -23,10 +24,11 @@ class PageController extends Controller
 
     public function about()
     {
+        $dataComments = Comments::get();
         $dataComents = Coments::get();
         $dataTables = Table::get();
         $dataAbouts = About::get();
-        return view('about', compact('dataAbouts', 'dataComents', 'dataTables'));
+        return view('about', compact('dataAbouts', 'dataComents', 'dataTables', 'dataComments'));
     }
 
     public function entry()

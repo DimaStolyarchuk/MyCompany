@@ -14,6 +14,9 @@ Route::get('/about', 'PageController@about')->name('about');
 Route::get('/blog', 'PageController@blog')->name('blog');
 Route::get('/entry', 'PageController@entry')->name('entry');
 
+Route::post('/save_comments', 'Admin\CommentsController@savecomments')->name('save_comments');
+Route::post('/save_orders', 'Admin\OrderController@saveorders')->name('save_orders');
+
 
 Route::get('/admin_coments', 'Admin\ComentsController@coments')->name('admin_coments');
 Route::get('/coments_form', 'Admin\ComentsController@coments_form')->name('coments_form');
