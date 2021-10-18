@@ -19,21 +19,21 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Таблиця
+                            Таблиця редагування даних
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form class="form-horizontal" role="form" action="{{ route('save_home') }}" method="POST" enctype="multipart/form-data">
                                         {{ csrf_field() }}
-                                        <input type="hidden" name="id" value="{{ isset($dataHomes->id) ? $dataHomes->id : '' }}">
+                                        <input type="hidden" name="id" value="{{$dataHomes->id}}">
 
                                         <div class="card-body">
                                             <div class="form-group row">
                                                 <label for="fname" >Зображення</label>
                                                 <div class="col-sm-9">
-                                                    <input name="image" type="file" class="form-control"
-                                                           placeholder="Зображення">
+                                                    <input type="file" name="image" class="form-control" id="fname" value="{{$dataHomes->image ?? ''}}">
+                                                    <input type="hidden" name="image_2" value="{{$dataHomes->image}}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -72,6 +72,7 @@
 @include('admin.scripts')
 </body>
 </html>
+
 
 
 
