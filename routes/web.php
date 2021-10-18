@@ -53,3 +53,9 @@ Route::get('/news_form', 'Admin\NewsController@news_form')->name('news_form');
 Route::post('/save_news', 'Admin\NewsController@savenews')->name('save_news');
 Route::get('/news_edit/{id}', 'Admin\NewsController@edit_news')->name('news_edit');
 Route::get('/news_delete/{id}', 'Admin\NewsController@delete_news')->name('delete_news');
+
+Route::get('/admin_blog', 'Admin\BlogController@blog')->name('admin_blog');
+Route::get('/blog_form', 'Admin\BlogController@blog_form')->name('blog_form');
+Route::post('/save_blog', 'Admin\BlogController@saveblog')->name('save_blog');
+Route::get('/blog_edit/{id}', 'Admin\BlogController@edit_blog')->name('blog_edit');
+Route::get('/blog_delete/{id}', 'Admin\BlogController@delete_blog')->name('delete_blog');

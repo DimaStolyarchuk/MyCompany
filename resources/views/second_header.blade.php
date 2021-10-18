@@ -29,35 +29,32 @@
         <!-- End Contact Form -->
         <div id="compdetails">
             <div id="officialdetails">
-                <h2>Company Information !</h2>
+                <h2>Інформація про нашу компанію</h2>
                 <ul>
-                    <li>Company Name Ltd</li>
-                    <li>Registered in England &amp; Wales</li>
-                    <li>Company No. xxxxxxx</li>
-                    <li class="last">VAT No. xxxxxxxxx</li>
+                    <li>Назва:</li>
+                    <li>MyCompany</li>
+                    <li>Ми знаходимось за адресою:</li>
+                    <li class="last">м. Київ, вул. Жолудева будинок 3а</li>
                 </ul>
-                <h2>Stay in The Know !</h2>
-                <p><a href="#">Get Our E-Newsletter</a> | <a href="#">Grab The RSS Feed</a></p>
             </div>
             <div id="contactdetails">
-                <h2>Our Contact Details !</h2>
+                <h2>Наші контакти</h2>
                 <ul>
-                    <li>Company Name</li>
-                    <li>Street Name &amp; Number</li>
-                    <li>Town</li>
-                    <li>Postcode/Zip</li>
-                    <li>Tel: xxxxx xxxxxxxxxx</li>
-                    <li>Fax: xxxxx xxxxxxxxxx</li>
-                    <li>Email: info@domain.com</li>
-                    <li class="last">LinkedIn: <a href="#">Company Profile</a></li>
+                    <li>Зв'яжіться з нами по телефону:</li>
+                    <li>Київстар: (097)111 11 11</li>
+                    <li>Лайф: (063)111 11 11</li>
+                    <li>МТС: (066)111 11 11</li>
+                    <li>Email: MyCompany@gmail.com</li>
+{{--                    <li class="last">LinkedIn: <a href="#">Company Profile</a></li>--}}
                 </ul>
             </div>
             <div class="clear"></div>
         </div>
         <!-- End Company Details -->
         <div id="copyright">
-            <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
-            <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+            <p class="fl_left">Компанія MyCompany &copy; 2021 - Всі права захищені мною)
+{{--                <a href="#">Domain Name</a></p>--}}
+{{--            <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>--}}
             <br class="clear" />
         </div>
         <div class="clear"></div>

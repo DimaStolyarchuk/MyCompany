@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\About;
+use App\Blog;
 use App\Coments;
 use App\Comments;
 use App\Entry;
@@ -39,9 +40,7 @@ class PageController extends Controller
 
     public function blog()
     {
-//        $dataHomes = Home::get();
-//        $dataInfos = Info::get();
-//        $dataNews = News::get();
-        return view('blog');
+        $dataBlogs = Blog::get();
+        return view('blog',compact('dataBlogs'));
     }
 }
